@@ -13,12 +13,12 @@ class PiperTTS:
     Wrapper for local Piper TTS using pre-downloaded binaries/models.
     Streams generated audio directly to aplay for low latency playback.
     """
-
+    # model_name: str = "en_US-ryan-medium.onnx",
     def __init__(
         self,
         models_root: Optional[Path] = None,
-        binary_name: str = "piper",
-        model_name: str = "en_US-ryan-medium.onnx",
+        binary_name: str = "piper",   
+        model_name: str = "en_US-ryan-high.onnx",
     ) -> None:
         self._log = get_logger(__name__)
         base_dir = models_root or Path(__file__).resolve().parents[2] / "models" / "piper"
